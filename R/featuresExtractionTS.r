@@ -1,20 +1,52 @@
-# ----------------
-# Features extraction from time series
-# ----------------
-featuresExtractionTS <- function(fileTS = NULL, nameColumnValue = NULL, subInterval = FALSE, amongSubIntervals = 2){
-
-  library(tools)
-
+#' @title Features Extraction from Time Series
+#' @name featuresExtractionTS
+#' @aliases featuresExtractionTS
+#' @author Adeline M. Maciel
+#' @docType data
+#'  
+#' @description Performed a feature extraction from time series data. And return statistical summary for time series entire or by intervals of the time series
+#' @usage featuresExtractionTS(fileTS = NULL, nameColumnValue = NULL, 
+#' subInterval = FALSE, numberSubIntervals = 2)
+#' @param fileTS A file time series.
+#' @param nameColumnValue A name of column with value, such as, vegetation indice
+#' @param subInterval If TRUE, the data.frame will be divide in subintervals, for example, given a data.frame with 23 rows and 3 subintervals, the first and second subinterval will have 8 rows each, and the last only 7 rows. Default is FALSE.
+#' @param numberSubIntervals A number of subintervals.
+#' @keywords datasets
+#' @return new dataset of data.frame with statistical features
+#' @import tools
+#' @import plyr
+#' @export 
+#' @examples \dontrun{
+#' # open a data example
+#' library(featuresTS)
+#' data <- data("dataTS")
+#' df <- data
+#'
+#' # features extraction for entire data.frame without subIntervals
+#' featuresExtractionTS(fileTS = df, nameColumnValue = "value", 
+#' subInterval = FALSE)
+#' # result in data.frame with statistical features
+#'
+#' # features extraction for entire data.frame and  2 subIntervals
+#' featuresExtractionTS(fileTS = df, nameColumnValue = "value", 
+#' subInterval = TRUE, numberSubIntervals = 2)
+#'
+#'}
+#'
+featuresExtractionTS <- function(fileTS = NULL, nameColumnValue = NULL, subInterval = FALSE, numberSubIntervals = 2){
+  
+  #library(tools)
+  
   if (!is.null(fileTS)) {
     time <- fileTS
   }else {
     stop("File must be defined!")
   }
-
+  
   indexLongitude <- which(colnames(time) == "longitude")
   indexLatitude <- which(colnames(time) == "latitude")
   longLat <- cbind(unique(time[,indexLongitude]),unique(time[,indexLatitude]))
-
+  
   indexDate <- which(colnames(time) == "date")
   date <- unique(format(as.Date(time[,indexDate]), format = '%Y'))
   if (length(date) > 1){
@@ -22,15 +54,15 @@ featuresExtractionTS <- function(fileTS = NULL, nameColumnValue = NULL, subInter
   } else {
     year <- date
   }
-
+  
   if (!is.null(nameColumnValue)) {
     indexColumn <- which(colnames(time) == nameColumnValue)
-
-    library(plyr)
+    
+    #library(plyr)
     vertice <- time[,indexColumn]
     vertices <- t(vertice)
     # total.featuresTS <- NULL
-
+    
     length <- length(vertice) # nrow time series
     mean <- mean(vertice)
     max <- max(vertice)
@@ -44,32 +76,32 @@ featuresExtractionTS <- function(fileTS = NULL, nameColumnValue = NULL, subInter
     amplitude <- amplitude(vertice) # difference between max and min
     area <- trapezoid.AUC(seq(length(vertice)),vertice)  # area time series
     perimeter <- trapezoid.PerC(seq(length(vertice)),vertice) # perimeter
-
+    
     data.features <- cbind(length, mean, max, min, sd, median, sum, skewness, kurtosis, variance, amplitude, area,perimeter)
     info <- cbind(longLat, year) # longitude,latitude and year
-
+    
     colnames(data.features) = c("length", "mean", "max", "min", "sd", "median", "sum", "skewness", "kurtosis", "variance", "amplitude", "area", "perimeter")
     colnames(info) = c("longitude", "latitude", "year")
-
+    
     total.featuresTS <- cbind(vertices, data.features, info)
-
-
+    
+    
     if (subInterval == TRUE) {
-
-      amongSubIntervals <- as.integer(amongSubIntervals)
-
-      if (amongSubIntervals >= 2 && amongSubIntervals <= nrow(time)){
-        subInter <- split(time, f = rep_len(1:as.integer(amongSubIntervals), nrow(time)))
+      
+      numberSubIntervals <- as.integer(numberSubIntervals)
+      
+      if (numberSubIntervals >= 2 && numberSubIntervals <= nrow(time)){
+        subInter <- split(time, f = rep_len(1:as.integer(numberSubIntervals), nrow(time)))
       } else {
         stop("The amount of subintervals should be >= 2 and lower that number of lines of the time series!")
       }
-
+      
       subTotalTS <- NULL
-
+      
       for(x in 1:length(subInter)){
         partTime <- sprintf("ts.subInter_%s",x)
         partTimeValues <- subInter[[x]]
-
+        
         length.sub <- nrow(partTimeValues[,indexColumn])
         mean.sub <- mean(partTimeValues[,indexColumn])
         max.sub <- max(partTimeValues[,indexColumn])
@@ -79,23 +111,23 @@ featuresExtractionTS <- function(fileTS = NULL, nameColumnValue = NULL, subInter
         amplitude.sub <- amplitude(partTimeValues[,indexColumn])
         area.sub <- trapezoid.AUC(seq(length(partTimeValues[,indexColumn])),partTimeValues[,indexColumn])
         perimeter.sub <- trapezoid.PerC(seq(length(partTimeValues[,indexColumn])),partTimeValues[,indexColumn])
-
-
+        
+        
         subValues <- cbind(length.sub,mean.sub,max.sub,min.sub,sd.sub,sum.sub,amplitude.sub,area.sub,perimeter.sub)
         colnames(subValues) = c(sprintf("length.sub.%d", x), sprintf("mean.sub.%d", x), sprintf("max.sub.%d", x), sprintf("min.sub.%d", x), sprintf("sd.sub.%d", x), sprintf("sum.sub.%d", x), sprintf("amplitude.sub.%d", x), sprintf("area.sub.%d", x), sprintf("perimeter.sub.%d", x))
-
+        
         subTotalTS <- cbind(subTotalTS,subValues)
       }
-
+      
       total.featuresSubTS <- cbind(vertices, data.features, subTotalTS, info)
-
+      
       assign('data.features+SubTS', total.featuresSubTS, envir = parent.frame())
-
+      
     }else {
       # total.featuresTS <- cbind(vertices, data.features, info)
       assign('data.featuresTS', total.featuresTS, envir = parent.frame())
     }
-
+    
   }else {
     stop("Column with value for features extraction must be defined!")
   }
@@ -146,9 +178,9 @@ trapezoid.AUC <- function (x, y, na.rm = FALSE) {
   idx <- order(x)
   x <- x[idx]
   y <- y[idx]
-
+  
   a <- sum(apply(cbind(y[-length(y)], y[-1]), 1, mean) * (x[-1] - x[-length(x)]))
-
+  
   return(a)
 }
 
@@ -168,22 +200,23 @@ trapezoid.PerC <- function (x, y, na.rm = FALSE){
     x <- x[idx]
     y <- y[idx]
   }
-
+  
   if (length(x) != length(y))
     stop("length x must equal length y")
   idx <- order(x)
   x <- x[idx]
   y <- y[idx]
-
+  
   # Pythagorean theorem
   # c^2 = a^2 + b^2
   # sqrt(c^2) + frequencia + primeiro valor do vector + utimo valor do vector = perimeter
-
+  
   p <- sum(sqrt((apply(cbind(y[-length(y)], y[-1]), 1, diff)^2) + (x[-1] - x[-length(x)])^2) + (x[-1] - x[-length(x)])) + y[length(1)] + y[length(y)]
-
+  
   return(p)
 }
 
 #ghg <- c(12, 14, 17, 13, 8)
 #trapezoid.PerC(seq(length(ghg)),ghg)
 # 38.62047
+

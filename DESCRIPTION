@@ -1,16 +1,16 @@
 Package: featuresTS
 Type: Package
-Title: An Implementation of the Features Extraction from Time Series
+Title: Features Extraction from Time Series
 Version: 0.1.0
 Date: 2016-04-30
-Author: Adeline M. Maciel
-Maintainer: Adeline M. Maciel <adelsud6@gmail.com>
-Description: More about what it does (maybe more than one line)
+Author: Adeline Maciel
+Maintainer: Adeline Maciel <adelsud6@gmail.com>
+Description: Features Extraction from Time Series
 License: GPL-2
 LazyData: TRUE
-Imports:
-    tools (>= 3.2.3),
-    zoo (>= 1.7-12),
-    signal (>= 0.7-6),
-    plyr (>= 1.8.3)
+Depends: R (>= 3.2.3)
 RoxygenNote: 5.0.1
+Imports: plyr,
+    signal,
+    tools,
+    zoo
