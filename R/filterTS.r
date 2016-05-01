@@ -1,8 +1,8 @@
 #' @title Filter Time Series using Savitzky–Golay filter
 #'
 #' @description Return a new data.frame with values of time series filtered.
-#' @usage filterTS ( fileTS = data, nameColumnValue = "V1", outlier = if(TRUE)
-#' define a number to next parameter value, value = integer )
+#' @usage{ filterTS( fileTS = data, nameColumnValue = "V1", outlier = if(TRUE)
+#' define a number to next parameter value, value = integer ) }
 #' @param fileTS file time series
 #' @param nameColumnValue name of column with value to filter
 #' @param outlier TRUE/FALSE if have any outlier for to make interpolation
@@ -11,10 +11,9 @@
 #' @seealso Savitzky–Golay filter details in \code{\link{signal}} package
 #' @return data.filtered new data.frame with new column with value filtered
 #' @examples
-#'
 #' # open a data example
 #' df <- read.csv("data/dataTimeSeries.csv")
-#'
+#' #'
 #' # the time series data contains 4 columns and 207 rows like
 #' # longitude  latitude       date   value
 #' #  -57.0474 -11.36449 2004-06-25  0.3125

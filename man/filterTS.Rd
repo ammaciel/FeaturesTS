@@ -4,8 +4,8 @@
 \alias{filterTS}
 \title{Filter Time Series using Savitzky–Golay filter}
 \usage{
-filterTS ( fileTS = data, nameColumnValue = "V1", outlier = if(TRUE)
-define a number to next parameter value, value = integer )
+{ filterTS( fileTS = data, nameColumnValue = "V1", outlier = if(TRUE)
+define a number to next parameter value, value = integer ) }
 }
 \arguments{
 \item{fileTS}{file time series}
@@ -23,10 +23,9 @@ data.filtered new data.frame with new column with value filtered
 Return a new data.frame with values of time series filtered.
 }
 \examples{
-
 # open a data example
 df <- read.csv("data/dataTimeSeries.csv")
-
+#'
 # the time series data contains 4 columns and 207 rows like
 # longitude  latitude       date   value
 #  -57.0474 -11.36449 2004-06-25  0.3125
