@@ -21,8 +21,8 @@
 #' @examples \dontrun{
 #' # open a data example
 #' library(featuresTS)
-#' data <- data("dataTS")
-#' df <- data
+#' data("dataTS")
+#' df <- dataTS
 #'  
 #' # the time series data contains 4 columns and 207 rows like
 #' # longitude  latitude       date   value
@@ -32,7 +32,6 @@
 #' #  -57.0474 -11.36449 2004-08-12  0.3648
 #'
 #' # apply function filterTS
-#' library(featuresTS)
 #' filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)
 #'
 #' # show new data.frame with values filtered

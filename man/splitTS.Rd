@@ -36,8 +36,8 @@ Return a new data.frame with values of time series separeted for year, agricultu
 \dontrun{
 # open a data example
 library(featuresTS)
-data <- data("dataTS")
-df <- data
+data("dataTS")
+df <- dataTS
 
 # split data.frame df with typeInterval = annual in the same year
 splitTS(df,2002,2005,"date",typeInterval = "annual")

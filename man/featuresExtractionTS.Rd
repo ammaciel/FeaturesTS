@@ -27,8 +27,8 @@ Performed a feature extraction from time series data. And return statistical sum
 \dontrun{
 # open a data example
 library(featuresTS)
-data <- data("dataTS")
-df <- data
+data("dataTS")
+df <- dataTS
 
 # features extraction for entire data.frame without subIntervals
 featuresExtractionTS(fileTS = df, nameColumnValue = "value", 

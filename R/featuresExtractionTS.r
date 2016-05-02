@@ -19,8 +19,8 @@
 #' @examples \dontrun{
 #' # open a data example
 #' library(featuresTS)
-#' data <- data("dataTS")
-#' df <- data
+#' data("dataTS")
+#' df <- dataTS
 #'
 #' # features extraction for entire data.frame without subIntervals
 #' featuresExtractionTS(fileTS = df, nameColumnValue = "value", 
