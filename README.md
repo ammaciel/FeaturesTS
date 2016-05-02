@@ -27,7 +27,8 @@ Time series data can be found using package wtss at <a href="http://github.com/g
   <li> Load the featuresTS package <code> library(featuresTS) </code></li>
   <li> Load a example data <code> data("dataTS") </code></li>
   <li> Create new data.frame df <code> df <- dataTS </code></li>
-  <li> Apply the filter about df data frame <code> filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)  </code></li>
+  <li> Apply the filter about df data frame <code> filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.3000)  </code></li>
+  <li> View time series filtered <code> plot.ts(data.filtered$original.value, lwd = 2, col="black");lines(data.filtered$filtered.value, lwd=2, col="red") </code></li>
   <li> Split time series for year <code> splitTS(data.filtered,2002,2005,"date",typeInterval = "annual") </code></li>
   <li> Get attributes from time series splited in annual values without subintervals <code> example1 <- featuresExtractionTS(fileTS = ts.annual_2002, nameColumnValue = "filtered.value", subInterval = FALSE) </code> </li>
   <li> Get attributes from time series splited in annual values with subintervals <code> example2 <- featuresExtractionTS(fileTS = ts.annual_2002, nameColumnValue = "filtered.value", subInterval = TRUE, numberSubIntervals = 3) </code> </li>
