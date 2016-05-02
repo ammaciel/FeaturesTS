@@ -20,7 +20,6 @@ Time series data can be found using package wtss at <a href="http://github.com/g
   <li>Install devtools <code>install.packages("devtools")</code><li>
   <li>Load devtools <code>library(devtools)</code></li>
   <li>Install the featuresTS package <code>install_github("ammaciel/FeaturesTS")</code></li>
-  <li>
 </ul>
 
 <h3>Examples:</h3>
@@ -30,10 +29,9 @@ Time series data can be found using package wtss at <a href="http://github.com/g
   <li> Create new data.frame df <code> df <- dataTS </code></li>
   <li> Apply the filter about df data frame <code> filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300) </code></li>
   <li> Split time series for year <code> splitTS(data.filtered,2002,2005,"date",typeInterval = "annual") </code></li>
-  <li> Get attributes from time series splited in annual values without subintervals <code> example1 <- featuresExtractionTS(fileTS = ts.annual_2002, nameColumnValue = "filtered.value", subInterval = FALSE) </code> 
-      and view example1 <code> utils::View(example1) </code> </li>
-  <li> Get attributes from time series splited in annual values with subintervals <code> example2 <- featuresExtractionTS(fileTS = ts.annual_2002, nameColumnValue = "filtered.value", subInterval = TRUE, numberSubIntervals = 3) </code> 
-      and view example2 <code> utils::View(example2) </code> </li>
+  <li> Get attributes from time series splited in annual values without subintervals <code> example1 <- featuresExtractionTS(fileTS = ts.annual_2002, nameColumnValue = "filtered.value", subInterval = FALSE) </code> </li>
+  <li> Get attributes from time series splited in annual values with subintervals <code> example2 <- featuresExtractionTS(fileTS = ts.annual_2002, nameColumnValue = "filtered.value", subInterval = TRUE, numberSubIntervals = 3) </code> </li>
+  <li> Show data frames example1 and example2 <code> utils::View(example1) </code> <code> utils::View(example2) </code> </li>
 </ul>  
   
   
