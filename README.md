@@ -2,8 +2,6 @@
 
 This package perfomed features extraction from time series data. The attributes extracted consists of statistical values, such as, maximum value, minimum value, standart deviation, variance, mean, median, amplitude, skewness, kurtosis, area under curve and perimeter about curve from time series. 
 
-<h2>rwtss</h2>
-
 With package "featuresST" is possible to filter time series using Savitzky-Golay filters, divide time series data in parts as for annual or a interval defined by user and also performed features extraction using parts data, been generated statistical values about time series data and/or subinterval this time series.  
 
 Time series data can be found using package wtss at <a href="http://github.com/gqueiroz/wtss/">http://github.com/gqueiroz/wtss<a>
