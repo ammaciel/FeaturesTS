@@ -11,15 +11,15 @@ Time series data can be found using package wtss at <a href="http://github.com/g
   <li><a href="http://git-scm.com/">Git</a></li>
   <li><a href="http://www.r-project.org/">R</a></li>
   <li><a href="http://www.rstudio.com/">Rstudio</a></li>
-  <li> time series data from wtss package
+  <li> time series data from wtss package </li>
 </ul>
 
 <h3>How to use the package:</h3>
 <ul>
   <li>Open RStudio</li>
-  <li>Install devtools <code>install.packages("devtools")</code><li>
-  <li>Load devtools <code>library(devtools)</code></li>
-  <li>Install the featuresTS package <code>install_github("ammaciel/FeaturesTS")</code></li>
+  <li>Install devtools <code>install.packages("devtools")</code> </li>
+  <li>Load devtools <code>library(devtools)</code> </li>
+  <li>Install the featuresTS package <code>install_github("ammaciel/FeaturesTS")</code> </li>
 </ul>
 
 <h3>Examples:</h3>
