@@ -8,13 +8,13 @@
 filterTS(fileTS = NULL, nameColumnValue = NULL, outlier = FALSE, value = -0.3000)
 }
 \arguments{
-\item{fileTS}{Dataframe. A file time series}
+\item{fileTS}{Dataframe. A time series file.}
 
 \item{nameColumnValue}{Character. A name of column with value to filter}
 
 \item{outlier}{Logical. If FALSE (the default), there none outlier for to make interpolation. If TRUE, there some gaps with values to make interpolation.}
 
-\item{value}{Numeric. A number, double or integer, if outlier is TRUE. The default is -0.3000}
+\item{value}{Numeric. A number, double or integer, if outlier is TRUE. The default is -0.3000.}
 }
 \value{
 Dataset with new column filtered

@@ -9,9 +9,9 @@ featuresExtractionTS(fileTS = NULL, nameColumnValue = NULL,
 subInterval = FALSE, numberSubIntervals = 2)
 }
 \arguments{
-\item{fileTS}{Dataframe. A file time series.}
+\item{fileTS}{Dataframe. A time series file.}
 
-\item{nameColumnValue}{Character. Name of a column with value, such as, Vegetation Index EVI ou NDVI}
+\item{nameColumnValue}{Character. Name of a column with value, such as, Vegetation Index EVI or NDVI.}
 
 \item{subInterval}{Logical. If TRUE, the data.frame will be divide in subintervals. Given a data.frame with 23 rows and 3 subintervals, the first and second subinterval will have 8 rows each, and the last only 7 rows. If FALSE (the default) nothing subinterval will be created.}
 

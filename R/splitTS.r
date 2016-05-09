@@ -8,10 +8,10 @@
 #' @usage splitTS(fileTS = NULL, yearStart = NULL, yearEnd = NULL, 
 #' nameColumnDate = NULL, typeInterval = c("annual","cropYear","myInterval"),
 #' sameYear = TRUE, monthStart = 01, monthEnd = 12)
-#' @param fileTS Dataframe. A file time series
-#' @param yearStart Integer. A number integer of the year which starts time series, i.e, 2001
-#' @param yearEnd Integer. A number integer of the year which ends time series, i.e, 2005
-#' @param nameColumnDate Character. Name of a column with date value from dataframe
+#' @param fileTS Dataframe. A time series file.
+#' @param yearStart Integer. A number integer of the year which starts time series, i.e, 2001.
+#' @param yearEnd Integer. A number integer of the year which ends time series, i.e, 2005.
+#' @param nameColumnDate Character. Name of a column with date value from dataframe.
 #' @param typeInterval Character. Type of interval to split time series. Three types can be choose: "annual","cropYear"or "myInterval". Option annual data.frame will be separeted in data.frames by year, with time series from January until December, 12 months. Option cropYear, data.frame will be divided from July of a year until June of the nex year, with 12 months. And myInterval, user should choose the interval that split data.frame, for example, April until September, with 7 months, the same year or considering differents year, with 17 months. Default is annual.
 #' @param sameYear Logical. If TRUE (the default) values of time series will be split in data.frames with same year, only months for year 2000. If FALSE, values will be divided in year differents, such as, months within of years 2000 and 2001.
 #' @param monthStart Integer. A number integer defining the month starts to split, only if typeInterval is choose. Default is 1, January.

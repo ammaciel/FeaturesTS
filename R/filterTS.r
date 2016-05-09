@@ -6,10 +6,10 @@
 #'
 #' @description Return a new data.frame with values of time series filtered.
 #' @usage filterTS(fileTS = NULL, nameColumnValue = NULL, outlier = FALSE, value = -0.3000)
-#' @param fileTS Dataframe. A file time series
+#' @param fileTS Dataframe. A time series file.
 #' @param nameColumnValue Character. A name of column with value to filter
 #' @param outlier Logical. If FALSE (the default), there none outlier for to make interpolation. If TRUE, there some gaps with values to make interpolation. 
-#' @param value Numeric. A number, double or integer, if outlier is TRUE. The default is -0.3000
+#' @param value Numeric. A number, double or integer, if outlier is TRUE. The default is -0.3000.
 #' @keywords datasets
 #' @seealso Savitzky-Golay filter details in \code{\link{signal}} package
 #' @return Dataset with new column filtered

@@ -7,8 +7,8 @@
 #' @description Performed a feature extraction from time series data. And return statistical summary for time series entire or by intervals of the time series
 #' @usage featuresExtractionTS(fileTS = NULL, nameColumnValue = NULL, 
 #' subInterval = FALSE, numberSubIntervals = 2)
-#' @param fileTS Dataframe. A file time series.
-#' @param nameColumnValue Character. Name of a column with value, such as, Vegetation Index EVI ou NDVI
+#' @param fileTS Dataframe. A time series file.
+#' @param nameColumnValue Character. Name of a column with value, such as, Vegetation Index EVI or NDVI.
 #' @param subInterval Logical. If TRUE, the data.frame will be divide in subintervals. Given a data.frame with 23 rows and 3 subintervals, the first and second subinterval will have 8 rows each, and the last only 7 rows. If FALSE (the default) nothing subinterval will be created.
 #' @param numberSubIntervals Integer. Number of subintervals to feature extraction.
 #' @keywords datasets

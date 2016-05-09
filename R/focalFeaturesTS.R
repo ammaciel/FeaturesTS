@@ -6,7 +6,7 @@
 #'  
 #' @description Performed a focal feature extraction from time series data. And return focal statistical summary for time series divided for year. Calculates for each input time series, cell  location, a statistic of the values within a specified neighborhood should be 8 around it (Queen's case).
 #' @usage focalFeaturesTS(fileTS = NULL, valueToleranceRaster = 0.00000)
-#' @param fileTS Dataframe. A file time series alredy with features extracted and divided for year ou subinterval.
+#' @param fileTS Dataframe. A time series file alredy with features extracted and divided for year ou subinterval.
 #' @param valueToleranceRaster Integer. A number of tolerance case raster of the time series contains coordinate intervals not constant. Because this function trasforme a time series in raster object to calcule neighborhood. Default is 0.00000.
 #' @keywords datasets
 #' @return Dataset with features of focal neighborhood statistical
@@ -43,6 +43,12 @@ focalFeaturesTS <- function(fileTS = NULL, valueToleranceRaster = 0.00000){ # ti
     time <- fileTS
   }else {
     stop("File must be defined!")
+  }
+  
+  if (!is.na(match("mean", names(time))) && !is.na(match("max", names(time))) &&  !is.na(match("min", names(time))) && !is.na(match("sd", names(time))) && !is.na(match("amplitude", names(time)))) {
+    time <- fileTS
+  }else {
+    stop("Not found columns means, max, min, sd or amplitude in dataframe!")
   }
   
   indexLongitude <- which(colnames(time) == "longitude")
