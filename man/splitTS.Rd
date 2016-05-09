@@ -34,30 +34,30 @@ Return a new data.frame with values of time series separeted for year, agricultu
 }
 \examples{
 \dontrun{
-# open a data example
+# Open a data example
 library(featuresTS)
 data("dataTS")
 df <- dataTS
 
-# split data.frame df with typeInterval = annual in the same year
+# Split data.frame df with typeInterval = annual in the same year
 splitTS(df,2002,2005,"date",typeInterval = "annual")
 # result in four new data.frames: ts.annual_2002, ts.annual_2003, ts.annual_2004
 # and ts.annual_2005, with 12 months each
 
-# split data.frame df with typeInterval = cropYear, by different years
+# Split data.frame df with typeInterval = cropYear, by different years
 splitTS(df,2002,2005,"date",typeInterval = "cropYear")
 # result in three new data.frames: ts.crop.year_2002_2003, ts.crop.year_2003_2004 and
 # ts.crop.year_2004_2005, with 12 months each
 
-# split data.frame df with typeInterval = myInterval, but option sameYear = FALSE
-splitTS(df,2002,2005,"date",typeInterval = "myInterval",
-sameYear = FALSE, monthStart = 08, monthEnd = 03)
+# Split data.frame df with typeInterval = myInterval, but option sameYear = FALSE
+splitTS(df,2002,2005,"date",typeInterval = "myInterval", sameYear = FALSE, 
+monthStart = 08, monthEnd = 03)
 # result in three new data.frames: ts.myInterval_2002_2003, ts.myInterval_2003_2004 and
 # ts.myInterval_2004_2005, with 8 months
 
-# split data.frame df with typeInterval = myInterval, but option sameYear = FALSE
-splitTS(df,2002,2005,"date",typeInterval = "myInterval",
-sameYear = FALSE, monthStart = 08, monthEnd = 03)
+# Split data.frame df with typeInterval = myInterval, but option sameYear = FALSE
+splitTS(df,2002,2005,"date",typeInterval = "myInterval", sameYear = FALSE, 
+monthStart = 08, monthEnd = 03)
 # result in four new data.frames: ts.myInterval_2002,  ts.myInterval_2003, ts.myInterval_2004 and
 # ts.myInterval_2005, with 5 months
 

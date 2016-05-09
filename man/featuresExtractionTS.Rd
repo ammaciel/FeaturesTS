@@ -25,19 +25,26 @@ Performed a feature extraction from time series data. And return statistical sum
 }
 \examples{
 \dontrun{
-# open a data example
+# Open a data example
 library(featuresTS)
 data("dataTS")
 df <- dataTS
 
-# features extraction for entire data.frame without subIntervals
-featuresExtractionTS(fileTS = df, nameColumnValue = "value", 
-subInterval = FALSE)
-# result in data.frame with statistical features
+# Apply the filterTS function on df data frame 
+dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)
 
-# features extraction for entire data.frame and  2 subIntervals
-featuresExtractionTS(fileTS = df, nameColumnValue = "value", 
-subInterval = TRUE, numberSubIntervals = 2)
+# Apply splitTS fcuntion to divide time series for year 
+splitTS(dataFiltered,2002,2005,"date",typeInterval = "annual")
+ 
+# Get features from time series divided in annual values without subintervals 
+example1 <- featuresExtractionTS(fileTS = ts.annual_2002, nameColumnValue = 
+"filtered.value", subInterval = FALSE)
+
+# Get features from time series divided in annual values with subintervals 
+example2 <- featuresExtractionTS(fileTS = ts.annual_2002, nameColumnValue = 
+"filtered.value", subInterval = TRUE, numberSubIntervals = 3)
+
+# Show data frames example1 and example2 utils::View(example1) utils::View(example2) 
 
 }
 

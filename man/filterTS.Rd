@@ -24,22 +24,22 @@ Return a new data.frame with values of time series filtered.
 }
 \examples{
 \dontrun{
-# open a data example
+# Open a data example
 library(featuresTS)
 data("dataTS")
 df <- dataTS
  
-# the time series data contains 4 columns and 207 rows like
+# The time series data contains 4 columns and 207 rows like
 # longitude  latitude       date   value
 #  -57.0474 -11.36449 2004-06-25  0.3125
 #  -57.0474 -11.36449 2004-07-11  0.3235
 #  -57.0474 -11.36449 2004-07-27 -0.3000
 #  -57.0474 -11.36449 2004-08-12  0.3648
 
-# apply function filterTS
+# Apply filterTS function 
 dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)
 
-# show new data.frame with values filtered
+# Show new data.frame with values filtered
 head(dataFiltered)
 
 }

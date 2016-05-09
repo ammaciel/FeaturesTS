@@ -18,15 +18,16 @@
 #' @note This function requires that the igraph package is available. 
 #' 
 #' @examples \dontrun{
-#' # open a data example
+#' # Open a data example
 #' library(featuresTS)
 #' data("dataFeaturesTS")
 #' df <- dataFeaturesTS
 #'
+#' # Load igraph package
 #' library(igraph)
-#' # features extraction for entire data.frame without subIntervals
+#' 
+#' # Focal neighborhood features extraction for dataset of time series 
 #' dfTSwithFocalFeatures <- focalFeaturesTS(fileTS = df, valueToleranceRaster = 0.000891266)
-#' # result in data.frame with focal features
 #' 
 #' head(dfTSwithFocalFeatures)
 #'
