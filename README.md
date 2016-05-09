@@ -42,7 +42,8 @@ Time series data can be found using package wtss at <a href="http://github.com/g
   <li> Load the featuresTS package <code> library(featuresTS) </code></li>
   <li> Load a example data <code> data("dataFeaturesTS") </code></li>
   <li> Create new data.frame df <code> df <- dataFeaturesTS </code></li>
-  <li> Apply the focalFeaturesTS function on df data frame <code> focalFeaturesTS(fileTS = df, valueToleranceRaster = 0.000891266)  </code></li>
+  <li> Apply the focalFeaturesTS function on df data frame df <code> dfTSwithFocalFeatures <- focalFeaturesTS(fileTS = df, valueToleranceRaster = 0.000891266)  </code></li>
+  <li> See new data.frame <code> head(dfTSwithFocalFeatures) </code></li>
   <li> See plots with values of focal neighborhood to mean, max, min and standard deviation for features mean, max, min, stardard deviation and amplitude.  
 </ul> 
   
