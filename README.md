@@ -22,17 +22,26 @@ Time series data can be found using package wtss at <a href="http://github.com/g
   <li>Install the featuresTS package <code> install_github("ammaciel/FeaturesTS") </code> </li>
 </ul>
 
-<h3>Examples:</h3>
+<h3>Examples 1 - Only one time series:</h3>
 <ul>
   <li> Load the featuresTS package <code> library(featuresTS) </code></li>
   <li> Load a example data <code> data("dataTS") </code></li>
   <li> Create new data.frame df <code> df <- dataTS </code></li>
-  <li> Apply the filter about df data frame <code> filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)  </code></li>
-  <li> See filtered time series <code> plot.ts(data.filtered$original.value, lwd = 2, col="black");lines(data.filtered$filtered.value, lwd=2, col="red") </code></li>
-  <li> Split time series for year <code> splitTS(data.filtered,2002,2005,"date",typeInterval = "annual") </code></li>
+  <li> Apply the filterTS function on df data frame <code> dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)  </code></li>
+  <li> See filtered time series <code> plot.ts(dataFiltered$original.value, lwd = 2, col="black");lines(dataFiltered$filtered.value, lwd=2, col="red") </code></li>
+  <li> Apply splitTS fcuntion to divide time series for year <code> splitTS(dataFiltered,2002,2005,"date",typeInterval = "annual") </code></li>
   <li> Get features from time series divided in annual values without subintervals <code> example1 <- featuresExtractionTS(fileTS = ts.annual_2002, nameColumnValue = "filtered.value", subInterval = FALSE) </code> </li>
   <li> Get features from time series divided in annual values with subintervals <code> example2 <- featuresExtractionTS(fileTS = ts.annual_2002, nameColumnValue = "filtered.value", subInterval = TRUE, numberSubIntervals = 3) </code> </li>
   <li> Show data frames example1 and example2 <code> utils::View(example1) </code> <code> utils::View(example2) </code> </li>
 </ul>  
+
+<h3>Examples 2 - For set of time series with focal neighborhood:</h3>
+<ul>
+  <li> Load the featuresTS package <code> library(featuresTS) </code></li>
+  <li> Load a example data <code> data("dataFeaturesTS") </code></li>
+  <li> Create new data.frame df <code> df <- dataFeaturesTS </code></li>
+  <li> Apply the focalFeaturesTS function on df data frame <code> focalFeaturesTS(fileTS = df, valueToleranceRaster = 0.000891266)  </code></li>
+  <li> See plots with values of focal neighborhood to mean, max, min and standard deviation for features mean, max, min, stardard deviation and amplitude.  
+</ul> 
   
   
