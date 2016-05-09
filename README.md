@@ -37,7 +37,7 @@ Time series data can be found using package wtss at <a href="http://github.com/g
   <li> Show data frames example1 and example2 <code> utils::View(example1) </code> <code> utils::View(example2) </code> </li>
 </ul>  
 
-<h3>Examples 2 - For set of time series with focal neighborhood:</h3>
+<h3>Examples 2 - For a set of time series to extraction of focal neighborhood features:</h3>
 <ul>
   <li> Load the featuresTS package <code> library(featuresTS) </code></li>
   <li> Load a example data <code> data("dataFeaturesTS") </code></li>
