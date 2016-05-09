@@ -17,7 +17,7 @@ filterTS(fileTS = NULL, nameColumnValue = NULL, outlier = FALSE, value = -0.3000
 \item{value}{A single integer if outlier is TRUE.}
 }
 \value{
-dataFiltered A new data.frame with new column of the value filtered
+Dataset of the data.frame with new column of the value filtered
 }
 \description{
 Return a new data.frame with values of time series filtered.
@@ -37,7 +37,7 @@ df <- dataTS
 #  -57.0474 -11.36449 2004-08-12  0.3648
 
 # apply function filterTS
-filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)
+dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)
 
 # show new data.frame with values filtered
 head(dataFiltered)

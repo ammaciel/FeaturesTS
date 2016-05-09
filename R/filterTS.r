@@ -12,7 +12,7 @@
 #' @param value A single integer if outlier is TRUE.
 #' @keywords datasets
 #' @seealso Savitzky-Golay filter details in \code{\link{signal}} package
-#' @return dataFiltered A new data.frame with new column of the value filtered
+#' @return Dataset of the data.frame with new column of the value filtered
 #' @import tools
 #' @importFrom signal sgolayfilt
 #' @import zoo
@@ -32,7 +32,7 @@
 #' #  -57.0474 -11.36449 2004-08-12  0.3648
 #'
 #' # apply function filterTS
-#' filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)
+#' dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)
 #'
 #' # show new data.frame with values filtered
 #' head(dataFiltered)

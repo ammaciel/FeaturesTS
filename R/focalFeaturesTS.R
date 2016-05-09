@@ -9,11 +9,13 @@
 #' @param fileTS A file time series alredy with features extracted and divided for year ou subinterval.
 #' @param valueToleranceRaster A number of tolerance case raster of the time series contains coordinate intervals not constant. Because this function trasforme time series for raster data. Default is 0.00000.
 #' @keywords datasets
-#' @return new dataset of data.frame with features of the focal neighborhood statistical
+#' @return Dataset with features of focal neighborhood statistical
 #' @import raster
 #' @importFrom sp SpatialPixelsDataFrame
 #' @importFrom dplyr filter
 #' @export
+#' 
+#' @note This function requires that the igraph package is available. 
 #' 
 #' @examples \dontrun{
 #' # open a data example
@@ -21,9 +23,12 @@
 #' data("dataFeaturesTS")
 #' df <- dataFeaturesTS
 #'
+#' library(igraph)
 #' # features extraction for entire data.frame without subIntervals
-#' focalFeaturesTS(fileTS = df, valueToleranceRaster = 0.000891266)
+#' dfTSwithFocalFeatures <- focalFeaturesTS(fileTS = df, valueToleranceRaster = 0.000891266)
 #' # result in data.frame with focal features
+#' 
+#' head(dfTSwithFocalFeatures)
 #'
 #'}
 #'
@@ -138,9 +143,10 @@ focalFeaturesTS <- function(fileTS = NULL, valueToleranceRaster = 0.00000){ # ti
  
   df4 <-  df3[ , grepl( "focal." , names( df3 ) ) ]
   
-  dfFinal <- cbind(df1,df4,df2)
+  dfFocal <- cbind(df1,df4,df2)
   
-  assign('dfTS.withFocalFeatures', dfFinal, envir = parent.frame())
+  return(dfFocal)
+  #assign('dfTS.withFocalFeatures', dfFocal, envir = parent.frame())
 
   proc.time() - ptm
   Sys.time() - ptm1

@@ -13,10 +13,13 @@ focalFeaturesTS(fileTS = NULL, valueToleranceRaster = 0.00000)
 \item{valueToleranceRaster}{A number of tolerance case raster of the time series contains coordinate intervals not constant. Because this function trasforme time series for raster data. Default is 0.00000.}
 }
 \value{
-new dataset of data.frame with features of the focal neighborhood statistical
+Dataset with features of focal neighborhood statistical
 }
 \description{
 Performed a focal feature extraction from time series data. And return focal statistical summary for time series divided for year. Calculates for each input time series, cell  location, a statistic of the values within a specified neighborhood should be 8 around it (Queen's case).
+}
+\note{
+This function requires that the igraph package is available.
 }
 \examples{
 \dontrun{
@@ -25,9 +28,12 @@ library(featuresTS)
 data("dataFeaturesTS")
 df <- dataFeaturesTS
 
+library(igraph)
 # features extraction for entire data.frame without subIntervals
-focalFeaturesTS(fileTS = df, valueToleranceRaster = 0.000891266)
+dfTSwithFocalFeatures <- focalFeaturesTS(fileTS = df, valueToleranceRaster = 0.000891266)
 # result in data.frame with focal features
+
+head(dfTSwithFocalFeatures)
 
 }
 
