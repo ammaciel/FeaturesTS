@@ -3,14 +3,21 @@ Type: Package
 Title: Features Extraction from Time Series
 Version: 0.1.0
 Date: 2016-04-30
-Author: Adeline Maciel
+Authors@R: person("Adeline", "Maciel", role = c("aut", "cre"), email = "adelsud6@gmail.com")
+Author: Adeline Maciel [aut, cre]
 Maintainer: Adeline Maciel <adelsud6@gmail.com>
-Description: Features Extraction from Time Series
-License: GPL-2
+Description: Features extraction from time series such as statistcal measures and focal neighborhood. Which can be used as features set for a data mining algorithm and allow classify land use and land cover datas using time series.
+License: GPL (>= 2)
 LazyData: TRUE
 Depends: R (>= 3.2.3)
 RoxygenNote: 5.0.1
-Imports: plyr,
+Imports: tools,
+    zoo,
+    raster,
+    sp,
     signal,
-    tools,
-    zoo
+    dplyr
+URL: https://github.com/ammaciel/FeaturesTS
+BugReports: https://github.com/ammaciel/FeaturesTS
+    
+    

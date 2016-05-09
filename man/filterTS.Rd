@@ -12,12 +12,12 @@ filterTS(fileTS = NULL, nameColumnValue = NULL, outlier = FALSE, value = -0.3000
 
 \item{nameColumnValue}{A name of column with value to filter}
 
-\item{outlier}{TRUE/FALSE if have any outlier for to make interpolation}
+\item{outlier}{Logical. If FALSE (the default), there none outlier for to make interpolation. If TRUE, there some gaps with values to make interpolation.}
 
-\item{value}{A single integer if outlier is TRUE}
+\item{value}{A single integer if outlier is TRUE.}
 }
 \value{
-a new data.frame, called data.filtered, with new column of the value filtered
+dataFiltered A new data.frame with new column of the value filtered
 }
 \description{
 Return a new data.frame with values of time series filtered.
@@ -40,9 +40,9 @@ df <- dataTS
 filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)
 
 # show new data.frame with values filtered
-head(data.filtered)
-}
+head(dataFiltered)
 
+}
 
 }
 \author{

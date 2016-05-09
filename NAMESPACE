@@ -2,8 +2,11 @@
 
 export(featuresExtractionTS)
 export(filterTS)
+export(focalFeaturesTS)
 export(splitTS)
-import(plyr)
-import(signal)
+import(raster)
 import(tools)
 import(zoo)
+importFrom(dplyr,filter)
+importFrom(signal,sgolayfilt)
+importFrom(sp,SpatialPixelsDataFrame)

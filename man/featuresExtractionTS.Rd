@@ -13,7 +13,7 @@ subInterval = FALSE, numberSubIntervals = 2)
 
 \item{nameColumnValue}{A name of column with value, such as, vegetation indice}
 
-\item{subInterval}{If TRUE, the data.frame will be divide in subintervals, for example, given a data.frame with 23 rows and 3 subintervals, the first and second subinterval will have 8 rows each, and the last only 7 rows. Default is FALSE.}
+\item{subInterval}{Logical. If TRUE, the data.frame will be divide in subintervals, for example, given a data.frame with 23 rows and 3 subintervals, the first and second subinterval will have 8 rows each, and the last only 7 rows. If FALSE (the default) nothing subinterval will be created.}
 
 \item{numberSubIntervals}{A number of subintervals.}
 }

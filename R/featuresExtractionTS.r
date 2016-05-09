@@ -9,13 +9,13 @@
 #' subInterval = FALSE, numberSubIntervals = 2)
 #' @param fileTS A file time series.
 #' @param nameColumnValue A name of column with value, such as, vegetation indice
-#' @param subInterval If TRUE, the data.frame will be divide in subintervals, for example, given a data.frame with 23 rows and 3 subintervals, the first and second subinterval will have 8 rows each, and the last only 7 rows. Default is FALSE.
+#' @param subInterval Logical. If TRUE, the data.frame will be divide in subintervals, for example, given a data.frame with 23 rows and 3 subintervals, the first and second subinterval will have 8 rows each, and the last only 7 rows. If FALSE (the default) nothing subinterval will be created.
 #' @param numberSubIntervals A number of subintervals.
 #' @keywords datasets
 #' @return new dataset of data.frame with statistical features
 #' @import tools
-#' @import plyr
 #' @export 
+#' 
 #' @examples \dontrun{
 #' # open a data example
 #' library(featuresTS)
@@ -84,7 +84,7 @@ featuresExtractionTS <- function(fileTS = NULL, nameColumnValue = NULL, subInter
     colnames(info) = c("longitude", "latitude", "year")
     
     total.featuresTS <- cbind(vertices, data.features, info)
-    
+    rownames(total.featuresTS) <- NULL
     
     if (subInterval == TRUE) {
       
@@ -120,6 +120,7 @@ featuresExtractionTS <- function(fileTS = NULL, nameColumnValue = NULL, subInter
       }
       
       total.featuresSubTS <- cbind(vertices, data.features, subTotalTS, info)
+      rownames(total.featuresSubTS) <- NULL
       
       assign('data.features+SubTS', total.featuresSubTS, envir = parent.frame())
       

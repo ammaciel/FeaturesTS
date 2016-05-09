@@ -13,13 +13,14 @@
 #' @param yearEnd A number integer of the year which ends time series, i.e, 2005
 #' @param nameColumnDate A name of column with value of date in data.frame
 #' @param typeInterval type of interval to split time series. Three types can be choose: "annual","cropYear"or "myInterval". Option annual data.frame will be separeted in data.frames by year, with time series from January until December, 12 months. Option cropYear, data.frame will be divided from July of a year until June of the nex year, with 12 months. And myInterval, user should choose the interval that split data.frame, for example, April until September, with 7 months, the same year or considering differents year, with 17 months. Default is annual.
-#' @param sameYear TRUE/FALSE for define if data.frame will be split in year equals or not. Default is TRUE
+#' @param sameYear Logical. If TRUE (the default) values of time series will be split in data.frames with same year, only months for year 2000. If FALSE, values will be divided in year differents, such as, months within of years 2000 and 2001.
 #' @param monthStart A number integer defining the month starts to split, only if typeInterval is choose. Default is 1, January.
 #' @param monthEnd A number integer defining the month ends to split, only if typeInterval is choose. Default is 12, December.
 #' @keywords datasets
 #' @return new dataset of data.frame with divided by interval
 #' @import tools
 #' @export 
+#' 
 #' @examples \dontrun{
 #' # open a data example
 #' library(featuresTS)
@@ -67,7 +68,7 @@ splitTS <- function(fileTS = NULL, yearStart = NULL, yearEnd = NULL, nameColumnD
   }
   
   if (!is.null(nameColumnDate)) {
-    indexColumn <- which(colnames(time) == nameColumnDate)
+    indexColumn <- which(colnames(time) == as.character(nameColumnDate))
     
     time$date <- format(time[,indexColumn], format = '%Y-%m')
     

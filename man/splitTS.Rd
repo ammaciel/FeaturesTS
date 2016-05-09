@@ -20,7 +20,7 @@ sameYear = TRUE, monthStart = 01, monthEnd = 12)
 
 \item{typeInterval}{type of interval to split time series. Three types can be choose: "annual","cropYear"or "myInterval". Option annual data.frame will be separeted in data.frames by year, with time series from January until December, 12 months. Option cropYear, data.frame will be divided from July of a year until June of the nex year, with 12 months. And myInterval, user should choose the interval that split data.frame, for example, April until September, with 7 months, the same year or considering differents year, with 17 months. Default is annual.}
 
-\item{sameYear}{TRUE/FALSE for define if data.frame will be split in year equals or not. Default is TRUE}
+\item{sameYear}{Logical. If TRUE (the default) values of time series will be split in data.frames with same year, only months for year 2000. If FALSE, values will be divided in year differents, such as, months within of years 2000 and 2001.}
 
 \item{monthStart}{A number integer defining the month starts to split, only if typeInterval is choose. Default is 1, January.}
 

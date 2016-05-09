@@ -7,6 +7,6 @@
 wtss service
 }
 \description{
-Dataset example to run functions this package
+Dataset example with one time series to run some functions this package
 }
 
