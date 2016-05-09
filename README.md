@@ -11,7 +11,8 @@ Time series data can be found using package wtss at <a href="http://github.com/g
   <li><a href="http://git-scm.com/">Git</a></li>
   <li><a href="http://www.r-project.org/">R</a></li>
   <li><a href="http://www.rstudio.com/">Rstudio</a></li>
-  <li>time series data from wtss package </li>
+  <li>Time series data from wtss package </li>
+  <li>This focalFeaturesTS function requires that the igraph package is available. </li> 
 </ul>
 
 <h3>How to use the package:</h3>
@@ -25,6 +26,7 @@ Time series data can be found using package wtss at <a href="http://github.com/g
 <h3>Examples 1 - Only one time series:</h3>
 <ul>
   <li> Load the featuresTS package <code> library(featuresTS) </code></li>
+  <li> Load the igraph package <code> library(igraph) </code></li>
   <li> Load a example data <code> data("dataTS") </code></li>
   <li> Create new data.frame df <code> df <- dataTS </code></li>
   <li> Apply the filterTS function on df data frame <code> dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)  </code></li>
