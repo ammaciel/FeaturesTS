@@ -9,16 +9,16 @@ featuresExtractionTS(fileTS = NULL, nameColumnValue = NULL,
 subInterval = FALSE, numberSubIntervals = 2)
 }
 \arguments{
-\item{fileTS}{A file time series.}
+\item{fileTS}{Dataframe. A file time series.}
 
-\item{nameColumnValue}{A name of column with value, such as, vegetation indice}
+\item{nameColumnValue}{Character. Name of a column with value, such as, Vegetation Index EVI ou NDVI}
 
-\item{subInterval}{Logical. If TRUE, the data.frame will be divide in subintervals, for example, given a data.frame with 23 rows and 3 subintervals, the first and second subinterval will have 8 rows each, and the last only 7 rows. If FALSE (the default) nothing subinterval will be created.}
+\item{subInterval}{Logical. If TRUE, the data.frame will be divide in subintervals. Given a data.frame with 23 rows and 3 subintervals, the first and second subinterval will have 8 rows each, and the last only 7 rows. If FALSE (the default) nothing subinterval will be created.}
 
-\item{numberSubIntervals}{A number of subintervals.}
+\item{numberSubIntervals}{Integer. Number of subintervals to feature extraction.}
 }
 \value{
-new dataset of data.frame with statistical features
+Dataframe with statistical features
 }
 \description{
 Performed a feature extraction from time series data. And return statistical summary for time series entire or by intervals of the time series

@@ -8,16 +8,16 @@
 filterTS(fileTS = NULL, nameColumnValue = NULL, outlier = FALSE, value = -0.3000)
 }
 \arguments{
-\item{fileTS}{A file time series}
+\item{fileTS}{Dataframe. A file time series}
 
-\item{nameColumnValue}{A name of column with value to filter}
+\item{nameColumnValue}{Character. A name of column with value to filter}
 
 \item{outlier}{Logical. If FALSE (the default), there none outlier for to make interpolation. If TRUE, there some gaps with values to make interpolation.}
 
-\item{value}{A single integer if outlier is TRUE.}
+\item{value}{Numeric. A number, double or integer, if outlier is TRUE. The default is -0.3000}
 }
 \value{
-Dataset of the data.frame with new column of the value filtered
+Dataset with new column filtered
 }
 \description{
 Return a new data.frame with values of time series filtered.
@@ -37,7 +37,7 @@ df <- dataTS
 #  -57.0474 -11.36449 2004-08-12  0.3648
 
 # Apply filterTS function 
-dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)
+dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.3000)
 
 # Show new data.frame with values filtered
 head(dataFiltered)

@@ -8,9 +8,9 @@
 focalFeaturesTS(fileTS = NULL, valueToleranceRaster = 0.00000)
 }
 \arguments{
-\item{fileTS}{A file time series alredy with features extracted and divided for year ou subinterval.}
+\item{fileTS}{Dataframe. A file time series alredy with features extracted and divided for year ou subinterval.}
 
-\item{valueToleranceRaster}{A number of tolerance case raster of the time series contains coordinate intervals not constant. Because this function trasforme time series for raster data. Default is 0.00000.}
+\item{valueToleranceRaster}{Integer. A number of tolerance case raster of the time series contains coordinate intervals not constant. Because this function trasforme a time series in raster object to calcule neighborhood. Default is 0.00000.}
 }
 \value{
 Dataset with features of focal neighborhood statistical

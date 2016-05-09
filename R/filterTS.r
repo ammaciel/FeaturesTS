@@ -6,13 +6,13 @@
 #'
 #' @description Return a new data.frame with values of time series filtered.
 #' @usage filterTS(fileTS = NULL, nameColumnValue = NULL, outlier = FALSE, value = -0.3000)
-#' @param fileTS A file time series
-#' @param nameColumnValue A name of column with value to filter
+#' @param fileTS Dataframe. A file time series
+#' @param nameColumnValue Character. A name of column with value to filter
 #' @param outlier Logical. If FALSE (the default), there none outlier for to make interpolation. If TRUE, there some gaps with values to make interpolation. 
-#' @param value A single integer if outlier is TRUE.
+#' @param value Numeric. A number, double or integer, if outlier is TRUE. The default is -0.3000
 #' @keywords datasets
 #' @seealso Savitzky-Golay filter details in \code{\link{signal}} package
-#' @return Dataset of the data.frame with new column of the value filtered
+#' @return Dataset with new column filtered
 #' @import tools
 #' @importFrom signal sgolayfilt
 #' @import zoo
@@ -32,7 +32,7 @@
 #' #  -57.0474 -11.36449 2004-08-12  0.3648
 #'
 #' # Apply filterTS function 
-#' dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)
+#' dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.3000)
 #'
 #' # Show new data.frame with values filtered
 #' head(dataFiltered)
