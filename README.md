@@ -2,7 +2,9 @@
 
 This package perfom features extraction from time series data. The attributes extracted consist of statistical values, such as, maximum value, minimum value, standart deviation, variance, mean, median, amplitude, skewness, kurtosis, area under curve and perimeter of the curve from time series. 
 
-With package "featuresST" is possible to filter time series using Savitzky-Golay filter, to divide time series data in parts as for annual or an interval defined by user and also to perform features extraction using time series data divided for year or another interval, as also generate statistical values about time series data and/or subintervals this time series.  
+With package "featuresST" is possible to filter time series using Savitzky-Golay filter, to divide time series data in parts as for annual or an interval defined by user and also to perform features extraction using time series data divided for year or another interval, as also generate statistical values about time series data and/or subintervals this time series. Besides is possible to extract focal neighborhood features for time series. 
+
+With this features the user can to perform data mining on time series data to classify land use and land conver.
 
 Time series data can be found using package wtss at <a href="http://github.com/gqueiroz/wtss/">http://github.com/gqueiroz/wtss<a>
 
