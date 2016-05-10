@@ -9,7 +9,7 @@ Maintainer: Adeline Maciel <adelsud6@gmail.com>
 Description: Features extraction from time series such as statistcal measures and focal neighborhood. Which can be used as features set for a data mining algorithm and allow classify land use and land cover datas using time series.
 License: GPL (>= 2)
 LazyData: TRUE
-Depends: R (>= 3.2.3)
+Depends: R (>= 3.1.0)
 RoxygenNote: 5.0.1
 Imports: tools,
     zoo,

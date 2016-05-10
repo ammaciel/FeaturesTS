@@ -167,7 +167,7 @@ FocalOperation<-function(fileTS = NULL, val = NULL, long = NULL, lat = NULL, val
   #library(dplyr)
   #library(raster)
   #library(sp)
-   time <- fileTS
+  time <- fileTS
   
   pts <- time[c(long:lat,val)] # long, lat and value such as means, max, min other 
   colnames(pts) <- c('x', 'y', 'z')
