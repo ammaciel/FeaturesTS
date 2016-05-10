@@ -26,7 +26,6 @@ Time series data can be found using package wtss at <a href="http://github.com/g
 <h3>Examples 1 - Only one time series:</h3>
 <ul>
   <li> Load the featuresTS package <code> library(featuresTS) </code></li>
-  <li> Load the igraph package <code> library(igraph) </code></li>
   <li> Load a example data <code> data("dataTS") </code></li>
   <li> Create new data.frame df <code> df <- dataTS </code></li>
   <li> Apply the filterTS function on df data frame <code> dataFiltered <- filterTS(fileTS = df, nameColumnValue = "value", outlier = TRUE, value= -0.300)  </code></li>
@@ -40,6 +39,7 @@ Time series data can be found using package wtss at <a href="http://github.com/g
 <h3>Examples 2 - For a set of time series to extraction of focal neighborhood features:</h3>
 <ul>
   <li> Load the featuresTS package <code> library(featuresTS) </code></li>
+  <li> Load the igraph package <code> library(igraph) </code></li>
   <li> Load a example data <code> data("dataFeaturesTS") </code></li>
   <li> Create new data.frame df <code> df <- dataFeaturesTS </code></li>
   <li> Apply the focalFeaturesTS function on df data frame df <code> dfTSwithFocalFeatures <- focalFeaturesTS(fileTS = df, valueToleranceRaster = 0.000891266)  </code></li>
